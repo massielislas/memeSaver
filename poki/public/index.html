@@ -20,7 +20,6 @@
     </div>
 
     <ul ng-if='meme.length' class='list center stretch'>
-        <div class= "col">
       <li ng-repeat="m in meme | orderBy:'-likes'" class='meme'>
         <img class='avatar' ng-src="{{m.avatarUrl}}" />
         <h5>{{ m.name }}</h5>
@@ -28,7 +27,6 @@
         ng-click="incrementLikes(m)"></span>
         {{m.likes}}
       </li>
-    </div>
     </ul>
   </div>
 
