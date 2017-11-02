@@ -17,9 +17,12 @@
     </div>
 
     <ul ng-if='meme.length' class='list center stretch'>
-      <li ng-repeat='p in meme' class='meme'>
-        <h1>{{ p.name }}</h1>
-        <img class='avatar' ng-src="{{p.avatarUrl}}" />
+      <li ng-repeat='m in meme' class='meme'>
+        <h1>{{ m.name }}</h1>
+        <img class='avatar' ng-src="{{m.avatarUrl}}" />
+        <span class="glyphicon glyphicon-thumbs-up" 
+        ng-click="incrementUpvotes(m)"></span>
+        {{m.likes}}
       </li>
     </ul>
 

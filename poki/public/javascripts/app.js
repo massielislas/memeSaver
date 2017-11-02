@@ -20,26 +20,41 @@ function memeFetcher ($http) {
 
 function mainCtrl ($scope, memeFetcher,$http) {
 
+  $scope.currentID = 6;
   $scope.meme = []
-  $scope.politics = [];
 
   memeFetcher.get()
     .then(function (data) {
       $scope.meme = data
     })
-  $scope.addMeme = function() {
-  var formData = {name:$scope.Name,avatarUrl:$scope.Url};
-  console.log(formData);
-  var memeURL = 'memes';
-  $http({
-     url: memeURL,
-     method: "POST",
-     data: formData
-  }).success(function(data, status, headers, config) {
-    console.log("Post worked");
-  }).error(function(data, status, headers, config) {
-    console.log("Post failed");
-  });
-}
 
+  $scope.addMeme = function() {
+    var formData = {id:$scope.currentID++,name:$scope.Name,avatarUrl:$scope.Url,likes:0};
+    console.log(formData);
+    var memeURL = 'memes';
+    $http({
+       url: memeURL,
+       method: "POST",
+       data: formData
+    }).success(function(data, status, headers, config) {
+      console.log("Post worked");
+    }).error(function(data, status, headers, config) {
+      console.log("Post failed");
+    });
+  }
+
+  $scope.incrementUpvotes = function(post) {
+    var formData = {id:post.id};
+    console.log(formData);
+    var memeURL = 'memesUp';
+    $http({
+       url: memeURL,
+       method: "POST",
+       data: formData
+    }).success(function(data, status, headers, config) {
+      console.log("Post worked");
+    }).error(function(data, status, headers, config) {
+      console.log("Post failed");
+    });
+  }
 }
