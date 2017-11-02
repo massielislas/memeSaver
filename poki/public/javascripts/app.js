@@ -38,12 +38,13 @@ function mainCtrl ($scope, memeFetcher,$http) {
        data: formData
     }).success(function(data, status, headers, config) {
       console.log("Post worked");
+      location.reload();
     }).error(function(data, status, headers, config) {
       console.log("Post failed");
     });
   }
 
-  $scope.incrementUpvotes = function(post) {
+  $scope.incrementLikes = function(post) {
     var formData = {id:post.id};
     console.log(formData);
     var memeURL = 'memesUp';
@@ -53,6 +54,7 @@ function mainCtrl ($scope, memeFetcher,$http) {
        data: formData
     }).success(function(data, status, headers, config) {
       console.log("Post worked");
+      location.reload();
     }).error(function(data, status, headers, config) {
       console.log("Post failed");
     });

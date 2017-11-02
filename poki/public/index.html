@@ -18,16 +18,16 @@
     </div>
 
     <ul ng-if='meme.length' class='list center stretch'>
-      <li ng-repeat='m in meme' class='meme'>
+      <li ng-repeat="m in meme | orderBy:'-likes'" class='meme'>
         <h1>{{ m.name }}</h1>
         <img class='avatar' ng-src="{{m.avatarUrl}}" />
         <span class="glyphicon glyphicon-thumbs-up" 
-        ng-click="incrementUpvotes(m)"></span>
+        ng-click="incrementLikes(m)"></span>
         {{m.likes}}
       </li>
     </ul>
 
-    <h1> Enter A New Poki</h1>
+    <h1> Enter A New Meme</h1>
     <form id="newMeme" ng-submit="addMeme()">
       Name: <input type="text" ng-model="Name" value=""><br>
       Url: <input type="url" ng-model="Url" value=""><br>
