@@ -21,11 +21,13 @@
 
     <ul ng-if='meme.length' class='list center stretch'>
       <li ng-repeat="m in meme | orderBy:'-likes'" class='meme'>
+        <span id="individualMeme">
         <img class='avatar' ng-src="{{m.avatarUrl}}" />
         <h5>{{ m.name }}</h5>
         <span class="glyphicon glyphicon-thumbs-up" 
         ng-click="incrementLikes(m)"></span>
         {{m.likes}}
+      </span>
       </li>
     </ul>
   </div>
