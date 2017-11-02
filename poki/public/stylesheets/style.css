@@ -42,6 +42,10 @@ div, ul {
   height: 100px;
 }
 
+.col{
+  padding: 10px 5px 10px 5px;
+}
+
 .list {
   text-align: center;
   list-style: none;
