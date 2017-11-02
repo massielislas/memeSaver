@@ -10,31 +10,25 @@
 
   <div id='app' ng-app='app' ng-controller='mainCtrl'>
 
-    <div ng-if='!pokemon.length' class='no-pokemon center stretch'>
+    <div ng-if='!meme.length' class='no-pokemon center stretch'>
       <h1 class='h1'>
-        Set up your endpoint at `/pokemon` to get this view working
+        Set up your endpoint at `/memes` to get this view working
       </h1>
     </div>
 
-    <ul ng-if='pokemon.length' class='list center stretch'>
-      <li ng-repeat='p in pokemon' class='pokemon'>
+    <ul ng-if='meme.length' class='list center stretch'>
+      <li ng-repeat='p in meme' class='meme'>
         <h1>{{ p.name }}</h1>
         <img class='avatar' ng-src="{{p.avatarUrl}}" />
       </li>
     </ul>
 
     <h1> Enter A New Poki</h1>
-    <form id="newPoki" ng-submit="addPoki()">
+    <form id="newMeme" ng-submit="addMeme()">
       Name: <input type="text" ng-model="Name" value=""><br>
       Url: <input type="url" ng-model="Url" value=""><br>
     <input type="submit" value="Submit">
     </form>
-
-    <ul ng-if='politics.length' >
-      <li ng-repeat='trump in politics'>
-        {{ trump.Name }}
-      </li>
-    </ul>
   </div>
 
 </body>

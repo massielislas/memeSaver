@@ -1,11 +1,11 @@
 var app = window.angular.module('app', [])
 
-app.factory("pokemonFetcher",pokemonFetcher)
+app.factory("memeFetcher",memeFetcher)
 app.controller("mainCtrl", mainCtrl)
 
-function pokemonFetcher ($http) {
+function memeFetcher ($http) {
 
-  var API_ROOT = 'pokemon'
+  var API_ROOT = 'memes'
   return {
     get: function () {
       return $http
@@ -14,41 +14,31 @@ function pokemonFetcher ($http) {
           return resp.data
         })
     },
-    tryit: function() {
-      var politics = "/politics";
-      return $http
-        .get(politics)
-        .then(function (resp) {
-          console.log("Get Worked");
-          console.log(resp.data);
-          return resp.data
-        })
-    }
   }
 
 }
 
-function mainCtrl ($scope, pokemonFetcher,$http) {
+function mainCtrl ($scope, memeFetcher,$http) {
 
-  $scope.pokemon = []
+  $scope.meme = []
   $scope.politics = [];
 
-  pokemonFetcher.get()
+  memeFetcher.get()
     .then(function (data) {
-      $scope.pokemon = data
+      $scope.meme = data
     })
 
-  pokemonFetcher.tryit()
+  memeFetcher.tryit()
     .then(function (data) {
       console.log("tryit");
       $scope.politics = data;
     })
-  $scope.addPoki = function() {
+  $scope.addMeme = function() {
   var formData = {name:$scope.Name,avatarUrl:$scope.Url};
   console.log(formData);
-  var pokiURL = 'pokemon';
+  var memeURL = 'memes';
   $http({
-     url: pokiURL,
+     url: memeURL,
      method: "POST",
      data: formData
   }).success(function(data, status, headers, config) {

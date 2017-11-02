@@ -3,7 +3,7 @@ var router = express.Router();
 var request = require('request');
 
 
-var pokemon = [
+var memes = [
   {
     name: 'Pikachu',
     avatarUrl: 'http://rs795.pbsrc.com/albums/yy232/PixKaruumi/Pokemon%20Pixels/Pikachu_Icon__free__by_Aminako.gif~c200'
@@ -37,21 +37,15 @@ router.get('/', function(req, res, next) {
   res.sendFile('index.html', { title: 'public' });
 });
 
-router.get('/pokemon', function(req, res) {
-  console.log("In Pokemon");
-  res.send(pokemon);
+router.get('/memes', function(req, res) {
+  console.log("In memes");
+  res.send(memes);
 });
 
-var politics = "https://zlzlap7j50.execute-api.us-east-1.amazonaws.com/prod";
-router.get('/politics', function(req,res) {
-  console.log("In politics");
-  request(politics).pipe(res);
-});
-
-router.post('/pokemon', function(req, res) {
-    console.log("In Pokemon Post");
+router.post('/memes', function(req, res) {
+    console.log("In memes Post");
     console.log(req.body);
-    pokemon.push(req.body);
+    memes.push(req.body);
     res.end('{"success" : "Updated Successfully", "status" : 200}');
 });
 
