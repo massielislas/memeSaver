@@ -7,7 +7,7 @@ var memes = [
   {
     id: 0,
     name: 'Me on a daily basis',
-    avatarUrl: 'http://themetapicture.com/media/picture.jpe',
+    avatarUrl: 'http://s2.quickmeme.com/img/6a/6a537a8428c28804ad9f638aaea421564d03ca9c83dbded3e484da57fc5353ec.jpg',
     likes:5
   }
 ];
