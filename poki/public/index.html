@@ -10,12 +10,14 @@
 <body>
 
   <div id='app' ng-app='app' ng-controller='mainCtrl'>
+    <div class="container">
     <h1> Enter A New Meme</h1>
     <form id="newMeme" ng-submit="addMeme()">
       Caption: <input type="text" ng-model="Name" value=""><br>
       Url: <input type="url" ng-model="Url" value=""><br>
     <input type="submit" value="Submit">
     </form>
+    </div>
 
     <ul ng-if='meme.length' class='list center stretch'>
       <li ng-repeat="m in meme | orderBy:'-likes'" class='meme'>
