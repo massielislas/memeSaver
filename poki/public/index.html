@@ -19,6 +19,7 @@
     </form>
     </div>
 
+    <div class= "col">
     <ul ng-if='meme.length' class='list center stretch'>
       <li ng-repeat="m in meme | orderBy:'-likes'" class='meme'>
         <img class='avatar' ng-src="{{m.avatarUrl}}" />
@@ -28,6 +29,7 @@
         {{m.likes}}
       </li>
     </ul>
+  </div>
   </div>
 
 </body>
