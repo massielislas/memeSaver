@@ -27,12 +27,6 @@ function mainCtrl ($scope, memeFetcher,$http) {
     .then(function (data) {
       $scope.meme = data
     })
-
-  memeFetcher.tryit()
-    .then(function (data) {
-      console.log("tryit");
-      $scope.politics = data;
-    })
   $scope.addMeme = function() {
   var formData = {name:$scope.Name,avatarUrl:$scope.Url};
   console.log(formData);
