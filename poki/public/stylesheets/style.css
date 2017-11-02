@@ -47,6 +47,10 @@ div, ul {
  /* padding: 20px 40px 20px 40px;*/
 }
 
+.container{
+  padding: 20px 0px 0px 0px;
+}
+
 .list {
   text-align: center;
   list-style: none;
