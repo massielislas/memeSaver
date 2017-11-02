@@ -11,12 +11,6 @@
 
   <div id='app' ng-app='app' ng-controller='mainCtrl'>
 
-    <div ng-if='!meme.length' class='no-pokemon center stretch'>
-      <h1 class='h1'>
-        Set up your endpoint at `/memes` to get this view working
-      </h1>
-    </div>
-
     <ul ng-if='meme.length' class='list center stretch'>
       <li ng-repeat="m in meme | orderBy:'-likes'" class='meme'>
         <h1>{{ m.name }}</h1>
