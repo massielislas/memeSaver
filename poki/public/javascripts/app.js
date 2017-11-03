@@ -26,7 +26,7 @@ function mainCtrl ($scope, memeFetcher,$http) {
   memeFetcher.get()
     .then(function (data) {
       $scope.meme = data;
-      $scope.currentID = $scope.meme.length + 1;
+      $scope.currentID = $scope.meme.length;
     })
 
   $scope.addMeme = function() {
